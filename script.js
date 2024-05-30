@@ -79,7 +79,7 @@ catch( error){
 createContent ();*/
 //.................delate..............//
 
-const delateUrl='https://jsonplaceholder.typicode.com/posts/1';
+/*const delateUrl='https://jsonplaceholder.typicode.com/posts/1';
 async function deleteContent(){
  try{
 const response= await fetch(delateUrl,{method: 'DELETE'}    )
@@ -91,4 +91,24 @@ if (! response.ok){
 }
 catch( error){console.error('problem with fetching operation', error)}}
 
-deleteContent();
+deleteContent();*/
+
+
+//...........testing axios...........//
+
+/*const axios=require('axios');
+axios.get('https://jsonplaceholder.typicode.com/posts/1')
+.then (  response =>{
+    console.log (response.data)
+})
+.catch(error =>{
+    console.error("error fetching data",error)
+})*/
+
+const axios=require('axios');
+axios.post ('https://jsonplaceholder.typicode.com/posts',{
+    key1:"value1",
+    key2:"value2"
+}) 
+.then( response=>{ console.log("data posted succesfuly:" , response.data)})
+.catch(error => {console.error("error posted data:", error);});
